@@ -54,7 +54,7 @@ export default function ProfileHeader() {
       >
         <div className="bg-white rounded-lg p-4 shadow-sm border border-slate-100">
           <p className="text-sm text-slate-500 mb-1">Edad</p>
-          <p className="text-slate-700 font-medium">48 años</p>
+          <p className="text-slate-700 font-medium">49 años</p>
         </div>
         <div className="bg-white rounded-lg p-4 shadow-sm border border-slate-100">
           <p className="text-sm text-slate-500 mb-1">Cédula Profesional</p>
