@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Briefcase, Calendar, MapPin, ChevronRight, Check } from 'lucide-react'
+import { Briefcase, Calendar } from 'lucide-react'
 
 const experienceList = [
   {
@@ -99,22 +99,22 @@ export default function ExperienceSection() {
     <section id="experiencia" className="py-8 scroll-mt-24">
       <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
         {/* Section Header */}
-        <div className="flex items-center gap-3 mb-8 pb-4 border-b border-slate-100">
-          <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600">
-            <Briefcase className="w-5 h-5" />
+        <div className="flex items-center gap-3.5 mb-8 pb-4 border-b border-slate-100">
+          <div className="w-11 h-11 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600">
+            <Briefcase className="w-6 h-6" />
           </div>
           <div>
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
               Experiencia Laboral
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500">
+            <p className="text-sm sm:text-base text-slate-500">
               Trayectoria profesional en desarrollo, docencia y dirección tecnológica
             </p>
           </div>
         </div>
 
         {/* Timeline Items */}
-        <div className="space-y-8">
+        <div className="space-y-10">
           {experienceList.map((item, index) => (
             <motion.div
               key={index}
@@ -125,28 +125,28 @@ export default function ExperienceSection() {
               className="relative pl-6 sm:pl-8 border-l-2 border-slate-200 hover:border-blue-500 transition-colors py-1 group"
             >
               {/* Bullet Node */}
-              <div className="absolute -left-[9px] top-2 w-4 h-4 rounded-full bg-white border-2 border-slate-300 group-hover:border-blue-600 group-hover:bg-blue-600 transition-all" />
+              <div className="absolute -left-[9px] top-2.5 w-4 h-4 rounded-full bg-white border-2 border-slate-300 group-hover:border-blue-600 group-hover:bg-blue-600 transition-all" />
 
-              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
-                <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1.5 mb-1.5">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
                   {item.role}
                 </h3>
-                <span className="inline-flex items-center gap-1 text-xs font-semibold text-slate-600 bg-slate-100 px-2.5 py-1 rounded-md">
-                  <Calendar className="w-3.5 h-3.5 text-slate-400" />
+                <span className="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-slate-600 bg-slate-100 px-3 py-1 rounded-md">
+                  <Calendar className="w-4 h-4 text-slate-400" />
                   {item.period}
                 </span>
               </div>
 
-              <p className="text-sm font-semibold text-blue-600 mb-4">
+              <p className="text-base sm:text-lg font-semibold text-blue-600 mb-4">
                 {item.company}
               </p>
 
               {/* Highlights List */}
               {item.highlights && (
-                <ul className="space-y-2 mb-4">
+                <ul className="space-y-2.5 mb-4">
                   {item.highlights.map((h, hIdx) => (
-                    <li key={hIdx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700 leading-relaxed">
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-2 flex-shrink-0" />
+                    <li key={hIdx} className="flex items-start gap-2.5 text-sm sm:text-base text-slate-700 leading-relaxed">
+                      <span className="w-2 h-2 rounded-full bg-blue-600 mt-2 flex-shrink-0" />
                       <span>{h}</span>
                     </li>
                   ))}
@@ -155,20 +155,20 @@ export default function ExperienceSection() {
 
               {/* Teaching Subjects */}
               {item.subjects && (
-                <div className="mt-4 pt-4 border-t border-slate-100 space-y-4">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                <div className="mt-6 pt-5 border-t border-slate-100 space-y-4">
+                  <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-500">
                     Materias Impartidas:
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     {Object.entries(item.subjects).map(([cat, list], cIdx) => (
                       <div key={cIdx} className="bg-slate-50 rounded-xl p-4 border border-slate-200">
-                        <h5 className="font-bold text-slate-900 text-xs mb-2 text-blue-700 pb-1 border-b border-slate-200">
+                        <h5 className="font-bold text-slate-900 text-xs sm:text-sm mb-2.5 text-blue-700 pb-1 border-b border-slate-200">
                           {cat}
                         </h5>
-                        <ul className="space-y-1">
+                        <ul className="space-y-1.5">
                           {list.map((sub, sIdx) => (
-                            <li key={sIdx} className="text-xs text-slate-600 flex items-center gap-1.5">
-                              <span className="w-1 h-1 rounded-full bg-slate-400" />
+                            <li key={sIdx} className="text-xs sm:text-sm text-slate-700 flex items-center gap-1.5 font-medium">
+                              <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
                               <span>{sub}</span>
                             </li>
                           ))}

@@ -31,14 +31,8 @@ export default function HomePage() {
         {/* Footer */}
         <footer className="pt-8 border-t border-slate-200 text-center">
           <div className="flex flex-col items-center justify-center gap-2">
-            <p className="text-sm font-semibold text-slate-800">
-              Héctor Saldaña Benitez — Ingeniero en Sistemas Computacionales
-            </p>
-            <p className="text-xs text-slate-500">
-              Cédula Profesional 5169918 • San Juan del Río, Querétaro
-            </p>
             <p className="text-xs text-slate-400 mt-2">
-              © {new Date().getFullYear()} Todos los derechos reservados.
+              © {new Date().getFullYear()} Todos los derechos reservados. San Juan del Río, Querétaro, México
             </p>
           </div>
         </footer>
@@ -46,3 +40,5 @@ export default function HomePage() {
     </div>
   )
 }
+
+
