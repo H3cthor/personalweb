@@ -1,25 +1,45 @@
-
+import Navbar from '@/components/navbar'
 import ProfileHeader from '@/components/profile-header'
+import EducationSection from '@/components/education-section'
+import ExperienceSection from '@/components/experience-section'
+import SkillsSection from '@/components/skills-section'
 import ContactInfo from '@/components/contact-info'
-import ProfessionalObjective from '@/components/professional-objective'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      <main className="container mx-auto max-w-4xl px-6 py-12">
-        {/* Header Section */}
+    <div className="min-h-screen bg-slate-100 text-slate-900 font-sans">
+      {/* Sticky Header Navigation */}
+      <Navbar />
+
+      {/* Main Container */}
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 pb-16">
+        {/* Profile Header */}
         <ProfileHeader />
-        
-        {/* Contact Information */}
+
+        {/* Formación Académica */}
+        <EducationSection />
+
+        {/* Experiencia Laboral */}
+        <ExperienceSection />
+
+        {/* Competencias, Idiomas y Pasatiempos */}
+        <SkillsSection />
+
+        {/* Información de Contacto */}
         <ContactInfo />
-        
-        {/* Professional Objective */}
-        <ProfessionalObjective />
-        
+
         {/* Footer */}
-        <footer className="mt-16 pt-8 border-t border-slate-200">
-          <div className="text-center text-slate-500 text-sm">
-            <p>© {new Date().getFullYear()} Héctor Saldaña Benítez. Todos los derechos reservados.</p>
+        <footer className="pt-8 border-t border-slate-200 text-center">
+          <div className="flex flex-col items-center justify-center gap-2">
+            <p className="text-sm font-semibold text-slate-800">
+              Héctor Saldaña Benitez — Ingeniero en Sistemas Computacionales
+            </p>
+            <p className="text-xs text-slate-500">
+              Cédula Profesional 5169918 • San Juan del Río, Querétaro
+            </p>
+            <p className="text-xs text-slate-400 mt-2">
+              © {new Date().getFullYear()} Todos los derechos reservados.
+            </p>
           </div>
         </footer>
       </main>

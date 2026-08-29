@@ -1,66 +1,63 @@
-
 'use client'
 
 import { motion } from 'framer-motion'
-import { User, GraduationCap } from 'lucide-react'
+import Image from 'next/image'
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Calendar,
+  Globe,
+  Linkedin,
+  Github,
+  Award,
+  Heart,
+  ExternalLink
+} from 'lucide-react'
 
 export default function ProfileHeader() {
   return (
-    <motion.section
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="text-center mb-12"
-    >
-      {/* Avatar placeholder with icon */}
+    <section id="inicio" className="pt-6 pb-10 scroll-mt-24">
       <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="w-32 h-32 mx-auto mb-8 bg-blue-100 rounded-full flex items-center justify-center shadow-lg"
-      >
-        <User className="w-16 h-16 text-blue-600" />
-      </motion.div>
-
-      {/* Name */}
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="text-4xl md:text-5xl font-bold text-slate-800 mb-4"
+        transition={{ duration: 0.5 }}
+        className="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 md:p-10 border border-slate-800 shadow-xl"
       >
-        Héctor Saldaña Benítez
-      </motion.h1>
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8">
+          {/* Circular Frame Profile Image */}
+          <div className="relative flex-shrink-0">
+            <div className="w-36 h-36 sm:w-40 sm:h-40 rounded-full p-1 border-2 border-blue-500 shadow-xl relative bg-slate-800">
+              <div className="relative w-full h-full rounded-full overflow-hidden">
+                <Image
+                  src="/images/profile.png"
+                  alt="Héctor Saldaña Benitez"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
 
-      {/* Title */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        className="flex items-center justify-center gap-3 mb-6"
-      >
-        <GraduationCap className="w-6 h-6 text-blue-600" />
-        <h2 className="text-xl md:text-2xl text-slate-600 font-medium">
-          Ingeniero en Sistemas Computacionales
-        </h2>
-      </motion.div>
+          {/* Core Info */}
+          <div className="flex-1 text-center md:text-left">
+            <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-2 mb-2">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white">
+                Héctor Saldaña Benitez
+              </h1>
+            </div>
 
-      {/* Professional details */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto"
-      >
-        <div className="bg-white rounded-lg p-4 shadow-sm border border-slate-100">
-          <p className="text-sm text-slate-500 mb-1">Edad</p>
-          <p className="text-slate-700 font-medium">49 años</p>
-        </div>
-        <div className="bg-white rounded-lg p-4 shadow-sm border border-slate-100">
-          <p className="text-sm text-slate-500 mb-1">Cédula Profesional</p>
-          <p className="text-slate-700 font-medium">5169918</p>
+            <h2 className="text-lg sm:text-xl text-blue-400 font-semibold mb-3">
+              Ingeniero en Sistemas Computacionales
+            </h2>
+
+            <div className="inline-block bg-slate-800/90 text-slate-300 text-xs sm:text-sm font-medium px-3 py-1.5 rounded-lg border border-slate-700">
+              Software Developer | AI & Data Engineering | Web3 Builder & Blockchain
+            </div>
+          </div>
         </div>
       </motion.div>
-    </motion.section>
+    </section>
   )
 }
