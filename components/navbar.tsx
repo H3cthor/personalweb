@@ -2,13 +2,14 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, GraduationCap, Briefcase, Code, Mail, User } from 'lucide-react'
+import { Menu, X, GraduationCap, Briefcase, Code, Mail, User, Award } from 'lucide-react'
 
 const navLinks = [
   { name: 'Inicio', href: '#inicio', icon: User },
   { name: 'Formación', href: '#formacion', icon: GraduationCap },
   { name: 'Experiencia', href: '#experiencia', icon: Briefcase },
   { name: 'Competencias', href: '#competencias', icon: Code },
+  { name: 'Certificaciones', href: '#certificaciones', icon: Award },
   { name: 'Contacto', href: '#contacto', icon: Mail }
 ]
 

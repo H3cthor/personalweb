@@ -2,15 +2,13 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { Award, CheckCircle, ExternalLink, Sparkles } from 'lucide-react'
+import { Award, CheckCircle2 } from 'lucide-react'
 
 const certsData = [
   {
     title: 'Google AI Essentials',
     issuer: 'Google / Coursera',
-    badgeImg: '/images/badge_google_ai.png',
-    accentColor: 'from-amber-50 to-orange-50/60 border-amber-200/80',
-    badgeColor: 'bg-amber-100 text-amber-900 border-amber-200',
+    badgeImg: '/images/ai_essentials.png',
     description: 'Certificación oficial sobre principios, herramientas de Inteligencia Artificial Generativa y optimización de flujos de trabajo.',
     highlights: [
       'Prompt Engineering y diseño de instrucciones',
@@ -21,9 +19,7 @@ const certsData = [
   {
     title: 'Inteligencia Artificial & Machine Learning',
     issuer: 'Especialízate.Sé+ / Open Academy',
-    badgeImg: '/images/badge_open_academy.png',
-    accentColor: 'from-rose-50 to-pink-50/60 border-rose-200/80',
-    badgeColor: 'bg-rose-100 text-rose-900 border-rose-200',
+    badgeImg: '/images/ia ML.png',
     description: 'Especialización avanzada en algoritmos de aprendizaje supervisado, no supervisado y redes neuronales.',
     highlights: [
       'Modelos de regresión y clasificación',
@@ -33,10 +29,8 @@ const certsData = [
   },
   {
     title: 'Introduction to Data Science',
-    issuer: 'Cisco Networking Academy (Verified)',
-    badgeImg: '/images/badge_cisco_ds.png',
-    accentColor: 'from-emerald-50 to-teal-50/60 border-emerald-200/80',
-    badgeColor: 'bg-emerald-100 text-emerald-900 border-emerald-200',
+    issuer: 'Cisco Networking Academy',
+    badgeImg: '/images/cisco ds.png',
     description: 'Acreditación verificada en ciencia de datos, exploración analítica y fundamentos de análisis cuantitativo.',
     highlights: [
       'Limpieza y preparación de datos',
@@ -48,85 +42,74 @@ const certsData = [
 
 export default function CertificationsSection() {
   return (
-    <section id="certificaciones" className="py-12 scroll-mt-24">
-      {/* Section Header */}
-      <div className="text-center mb-12">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100/80 text-amber-800 text-xs font-semibold mb-3 border border-amber-200"
-        >
-          <Award className="w-4 h-4 text-amber-600" />
-          <span>Acreditaciones Oficiales</span>
-        </motion.div>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight">
-          Certificaciones Destacadas
-        </h2>
-        <p className="text-slate-600 mt-2 text-sm md:text-base max-w-2xl mx-auto">
-          Insignias y certificaciones otorgadas por organizaciones globales líderes en Inteligencia Artificial y Ciencia de Datos.
-        </p>
-      </div>
+    <section id="certificaciones" className="py-8 scroll-mt-24">
+      <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+        {/* Section Header */}
+        <div className="flex items-center gap-3.5 pb-4 border-b border-slate-100">
+          <div className="w-11 h-11 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600">
+            <Award className="w-6 h-6" />
+          </div>
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+              Certificaciones
+            </h2>
+            <p className="text-sm sm:text-base text-slate-500">
+              Acreditaciones oficiales e insignias profesionales
+            </p>
+          </div>
+        </div>
 
-      {/* Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-        {certsData.map((cert, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.15 }}
-            className={`rounded-3xl p-6 md:p-8 bg-gradient-to-b ${cert.accentColor} border shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between`}
-          >
-            <div>
-              {/* Badge Image */}
-              <div className="flex items-center justify-between gap-4 mb-6">
-                <div className="relative w-20 h-20 rounded-2xl bg-white p-2 shadow-sm border border-slate-100 flex items-center justify-center overflow-hidden">
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {certsData.map((cert, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              className="bg-slate-50 rounded-2xl p-5 border border-slate-200 flex flex-col justify-between hover:border-blue-300 transition-all shadow-2xs group"
+            >
+              <div>
+                {/* Large Badge Image Showcase */}
+                <div className="w-full h-48 sm:h-52 rounded-xl bg-white p-3 border border-slate-200/80 shadow-xs flex items-center justify-center overflow-hidden mb-4 relative group-hover:border-blue-200 transition-colors">
+                  <div className="absolute top-2.5 right-2.5 z-10">
+                    <span className="text-xs font-semibold text-blue-600 bg-blue-50/95 backdrop-blur-xs px-2.5 py-1 rounded-md border border-blue-100 shadow-2xs">
+                      Verificado
+                    </span>
+                  </div>
                   <Image
                     src={cert.badgeImg}
                     alt={cert.title}
-                    width={72}
-                    height={72}
-                    className="object-contain max-h-full"
+                    width={320}
+                    height={320}
+                    className="max-h-full w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${cert.badgeColor}`}>
-                  Verificado
-                </span>
+
+                <h3 className="text-lg font-bold text-slate-900 mb-1">
+                  {cert.title}
+                </h3>
+                <p className="text-xs sm:text-sm font-semibold text-blue-600 mb-3">
+                  {cert.issuer}
+                </p>
+
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+                  {cert.description}
+                </p>
+
+                <ul className="space-y-1.5">
+                  {cert.highlights.map((item, hIdx) => (
+                    <li key={hIdx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-
-              <h3 className="text-xl font-bold text-slate-800 leading-snug mb-1">
-                {cert.title}
-              </h3>
-              <p className="text-xs md:text-sm font-semibold text-purple-700 mb-4">
-                {cert.issuer}
-              </p>
-
-              <p className="text-slate-700 text-xs md:text-sm leading-relaxed mb-6">
-                {cert.description}
-              </p>
-
-              <ul className="space-y-2 mb-6">
-                {cert.highlights.map((item, hIdx) => (
-                  <li key={hIdx} className="flex items-start gap-2 text-xs md:text-sm text-slate-700">
-                    <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="pt-4 border-t border-slate-200/60 flex items-center justify-between text-xs font-semibold text-slate-600">
-              <span className="flex items-center gap-1">
-                <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-                Acreditación Activa
-              </span>
-              <span className="text-purple-600">Google / Cisco / Open Academy</span>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   )

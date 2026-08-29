@@ -3,6 +3,7 @@ import ProfileHeader from '@/components/profile-header'
 import EducationSection from '@/components/education-section'
 import ExperienceSection from '@/components/experience-section'
 import SkillsSection from '@/components/skills-section'
+import CertificationsSection from '@/components/certifications-section'
 import ContactInfo from '@/components/contact-info'
 
 export default function HomePage() {
@@ -24,6 +25,9 @@ export default function HomePage() {
 
         {/* Competencias, Idiomas y Pasatiempos */}
         <SkillsSection />
+
+        {/* Certificaciones */}
+        <CertificationsSection />
 
         {/* Información de Contacto */}
         <ContactInfo />

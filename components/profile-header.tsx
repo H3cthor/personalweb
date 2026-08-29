@@ -18,7 +18,7 @@ export default function ProfileHeader() {
             <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-full p-1 border-2 border-blue-500 shadow-xl relative bg-slate-800">
               <div className="relative w-full h-full rounded-full overflow-hidden">
                 <Image
-                  src="/images/profile.png"
+                  src="/images/foto_perfil.jpg"
                   alt="Héctor Saldaña Benitez"
                   fill
                   className="object-cover"
